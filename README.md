@@ -124,6 +124,8 @@ title_html: "<b>hello</b>world"
 
 `archive_permalink`: [optional] permalink of the archive page. Set to `"/archive"` by default.
 
+`repo`: [optional] link to your website repo. If defined, it's added in the footer. Nothing is displayed otherwise.
+
 #### Author
 
 `email`: [optional] add email address in about layout.
