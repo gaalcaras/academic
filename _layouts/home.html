@@ -16,13 +16,22 @@ layout: default
   {{ content }}
 
   <ul class="post-list">
-    {% for post in site.posts limit:5 %}
+    {% for post in site.posts limit:site.nb_posts_page %}
       {% include post-li.html %}
     {% endfor %}
   </ul>
 
   {% include calltoaction.html message="Le blog vous intéresse ?" %}
 
-  <div class="archive">Voir <a href="/archive">tous les articles publiés</a>.</div>
+  {% assign nb_posts = site.posts | size %}
+  {% if site.archive_permalink %}
+    {% assign archive_link = site.archive_permalink %}
+  {% else %}
+    {% assign archive_link = "/archive" %}
+  {% endif %}
+
+  {% if nb_posts > site.nb_posts_page %}
+  <div class="archive">Voir <a href="{{ archive_link }}">tous les articles publiés</a>.</div>
+  {% endif %}
 
 </div>

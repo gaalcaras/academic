@@ -117,8 +117,11 @@ title_html: "<b>hello</b>world"
 
 `cc`: [optional] choose among the [Creative Commons](https://creativecommons.org/licenses/) licenses (v4). Accepted values are : `by`, `by-sa`, `by-nd`, `by-nc`, `by-nc-sa`, `by-nc-nd`. Defining the `cc` variable will add a small sentence in the footer. If no value is given, a small copyright is added instead.
 
-
 `dateformat`: [optional] format the dates of the whole website. Default "%b %-d, %Y". Read [the documentation](https://help.shopify.com/themes/liquid/filters/additional-filters#date) to learn how you can customize the date format.
+
+`nb_posts_page`: [optional] number of posts to display on the homepage. By default, all posts are listed. Note that you should create a page with the archive layout.
+
+`archive_permalink`: [optional] permalink of the archive page. Set to `"/archive"` by default.
 
 #### Author
 
@@ -182,7 +185,7 @@ Will automatically put the content of the page on the right column. The left col
 
 #### Archive layout
 
-Pages with the archive layout will list all posts published in reverse chronological order.
+Create a `archive.md` page, choose the "archive" layout. You don't need to write anything in this file, all posts published will be listed in reverse chronological order.
 
 #### 404 layout
 
