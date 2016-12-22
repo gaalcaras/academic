@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="colored-block">
+    Bienvenue dans les archives de ce blog. Vous trouverez ci-dessous la liste complète des billets publiés, ordonnés du plus récent au plus ancien.
+  </div>
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      {% include post-li.html %}
+    {% endfor %}
+  </ul>
+
+  {% include calltoaction.html message="Le blog vous intéresse ?" %}
+
+</div>

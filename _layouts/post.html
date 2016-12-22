@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  {% if page.thumbnail %}
+  <header class="post-header with-thumbnail">
+  {% else %}
+  <header class="post-header">
+  {% endif %}
+    {% if page.thumbnail %}
+    <img class="post-thumbnail" src="/assets/{{ page.thumbnail }}" alt="{{ page.title | escape }}"/>
+    {% endif %}
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {% include date.html date=page.date %}
+        </time>
+        {% if page.author %} • 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+        {% endif %}
+      </p>
+      <h3 class="post-summary">{{ page.summary }}</h3>
+    </div>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {% include calltoaction.html message="Cet article vous a plu ?" %}
+
+  {% if site.shortbio %}
+  <div class="post-author">
+    {% if site.github_username %}
+      <a href="{{ site.author_website }}">
+        <img class="user-picture" src="https://github.com/{{ site.github_username }}.png" alt="{{ site.author }}">
+      </a>
+    {% endif %}
+      <ul class="user-info">
+        <li class="user-name">
+          {{ site.author }}
+        </li>
+        <li class="user-shortbio">{{ site.shortbio }}</li>
+      </ul>
+  </div>
+  {% endif %}
+
+</article>

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% if site.pitch == null %}
+  {% assign div_class = "home" %}
+{% else %}
+  {% assign div_class = "home pitch" %}
+{% endif %}
+
+<div class="{{ div_class }}">
+  {% if site.pitch == null %}
+  <p>{{ site.description | escape }}</p>
+  {% endif %}
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts limit:5 %}
+      {% include post-li.html %}
+    {% endfor %}
+  </ul>
+
+  {% include calltoaction.html message="Le blog vous intéresse ?" %}
+
+  <div class="archive">Voir <a href="/archive">tous les articles publiés</a>.</div>
+
+</div>

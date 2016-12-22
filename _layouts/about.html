@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<div class="about-col-wrapper">
+  <div class="about-col about-col-1">
+
+    {% if site.github_username %}
+    <img class="user-picture" src="https://github.com/{{ site.github_username }}.png" alt="{{ site.author }}">
+    {% endif %}
+
+    <ul class="contact-list">
+      {% if site.email %}
+      <li>
+        {% include icon-email.html username=site.email %}
+      </li>
+      {% endif %}
+
+      {% if site.curriculum.url %}
+      <li>
+        {% include icon-file.html curriculum=site.curriculum %}
+      </li>
+      {% endif %}
+    </ul>
+
+    <ul class="contact-list">
+      {% if site.author_website %}
+      <li>
+        {% include icon-website.html url=site.author_website %}
+      </li>
+      {% endif %}
+
+      {% if site.github_username %}
+      <li>
+        {% include icon-github.html username=site.github_username %}
+      </li>
+      {% endif %}
+
+      {% if site.twitter_username %}
+      <li>
+        {% include icon-twitter.html username=site.twitter_username %}
+      </li>
+      {% endif %}
+
+      {% if site.linkedin_username %}
+      <li>
+        {% include icon-linkedin.html username=site.linkedin_username %}
+      </li>
+      {% endif %}
+
+    </ul>
+
+    <ul class="contact-list">
+      {% if site.keybase_username %}
+      <li>
+        {% include icon-keybase.html username=site.keybase_username %}
+      </li>
+      {% endif %}
+
+    </ul>
+  </div>
+  <article class="about-col about-col-2" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+  </article>
+</div>

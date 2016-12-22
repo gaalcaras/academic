@@ -1,0 +1,10 @@
+{% if site.dateformat %}
+  {% assign months = "Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre" | downcase | split: ", " %}
+  {% assign date = include.date | date: site.dateformat %}
+  {% assign eng_month = include.date | date: "%B" %}
+  {% assign num_month = include.date | date: "%m" | minus: 1 %}
+
+  {{ date | replace:eng_month, months[num_month] }}
+{% else %}
+  {{ include.date | date: "%b %-d, %Y" }}
+{% endif %}

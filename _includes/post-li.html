@@ -1,0 +1,19 @@
+<li>
+
+  <h2>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+  </h2>
+    <span class="post-meta">
+      <span class="date">
+      {% include date.html date=post.date %}
+      </span>
+    </span>
+
+  {% if post.thumbnail %}
+  <div class="post-thumbnail-wrapper">
+    <a href="{{ post.url | relative_url }}"><img class="post-thumbnail" src="/assets/{{ post.thumbnail }}" alt="{{ post.title | escape }}"/></a>
+  </div>
+  {% endif %}
+
+  <p>{{ post.summary }}</p>
+</li>

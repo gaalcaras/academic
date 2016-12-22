@@ -1,0 +1,46 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800|PT+Serif');
+
+// Our variables
+// $base-font-family: "Open Sans", sans-serif;
+$base-font-family: "PT Serif", serif;
+$base-font-size:   20px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.95;
+$base-line-height: 1.5;
+
+$alt-font-family: "Open Sans", sans-serif;
+$alt-font-weight: bold;
+
+$spacing-unit:     50px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #d33682;
+
+$grey-color:       #3F3F3F;
+$grey-color-light: lighten($grey-color, 50%);
+$grey-color-lighter: lighten($grey-color, 70%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    700px;
+
+$on-palm:          500px;
+$on-laptop:        700px;
+
+// Minima also includes a mixin for defining media queries.
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+
+// Import partials from the `minima` theme.
+@import "academic";

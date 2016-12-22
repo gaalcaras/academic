@@ -1,0 +1,9 @@
+<div class="colored-block">
+  {% if include.message %}
+  {{ include.message | escape }}
+  {% endif %}
+  Vous pouvez vous abonner au <a href="/feed.xml">fil RSS</a> du blog
+  {% if site.twitter_username %}
+   ou suivre <a href="https://twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a> sur Twitter
+  {% endif %}.
+</div>

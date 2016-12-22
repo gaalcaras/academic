@@ -1,0 +1,73 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+      <ul class="info-list footer-col">
+        {% if site.title %}
+        <li><a href="{{ "/" | relative_url}}">{{ site.title_html }}</a>
+        {% endif %}
+
+        {% if site.author_display %}
+        <span class="author"> par
+          {% if site.author_website %}
+          <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a>
+          {% else %}
+          {{ site.author }}
+          {% endif %}
+        </span>
+        </li>
+        {% endif %}
+
+        {% if site.description %}
+        <li>{{ site.description }}</li>
+        {% endif %}
+
+      </ul>
+
+      <ul class="follow-list footer-col">
+        <li> </li>
+
+        <li>
+          <a href="/feed.xml">RSS</a>
+        </li>
+
+        {% if site.twitter_username %}
+        <li><a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a></li>
+        {% endif %}
+
+        {% if site.github_username  %}
+        <li><a href="https://github.com/{{ site.github_username }}">Github</a></li>
+        {% endif %}
+
+      </ul>
+
+    <div class="bottom">
+      <div class="tech">
+        <a href="https://jekyllrb.com/">Jekyll</a> + Academic
+      </div>
+      <div class="legal">
+      {% if site.cc == null %}©{% endif %}
+        {% if site.title %}
+        <a href="{{ "/" | relative_url}}">{{ site.title | escape }}</a>
+        {% endif %}
+      {% assign oldest_post = site.posts reversed | first %}
+      {% assign oldest = oldest_post.date | date: "%Y" %}
+      {% assign newest = site.time | date: "%Y" %}
+      ({% if oldest != newest %}{{ oldest }}-{% endif %}{{ newest }})
+      {% if site.author %}
+        par <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a> 
+      {% endif %}
+      {% if site.cc %}
+      est placé sous licence <a target="_blank" rel="license" href="https://creativecommons.org/licenses/{{ site.cc }}/4.0/" class="cc-licence">CC {{ site.cc }}</a>
+      {% endif %}
+           </div>
+    </div>
+  </div>
+</footer>
+
+{% if page.layout == "post" %}
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{% endif %}
+
