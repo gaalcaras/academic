@@ -28,6 +28,7 @@ Table of contents:
 		* [Page layout](#page-layout)
 		* [About layout](#about-layout)
 		* [Archive layout](#archive-layout)
+		* [404 layout](#404-layout)
 * [Contributing](#contributing)
 * [Release log](#release-log)
 * [License](#license)
@@ -182,6 +183,16 @@ Will automatically put the content of the page on the right column. The left col
 #### Archive layout
 
 Pages with the archive layout will list all posts published in reverse chronological order.
+
+#### 404 layout
+
+Create a `404.md` page, set the layout:
+
+```
+layout: pagenotfound
+```
+
+The content of the page will be used in the 404 page.
 
 ## Contributing
 

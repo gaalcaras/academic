@@ -6,5 +6,6 @@ _posts
 _config.yml
 index.md
 about.md
+404.md
 archive.md
 Gemfile.lock
