@@ -1,6 +1,7 @@
 # academic
 
-Academic is a [Jekyll](http://jekyllrb.com/) theme with a focus on simplicity, typography and flexibility. I originally designed for my personal blog during my PhD thesis.
+Academic is a [Jekyll](http://jekyllrb.com/) theme with a focus on simplicity, typography and flexibility.
+I originally designed it for my personal blog during my PhD thesis.
 
 ![Academic screenshot](screenshot.png)
 
@@ -203,7 +204,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/gaalca
 
 ## Release log
 
-+ 0.1.0 : first release of the theme.
++ 0.1.1 [2016-12]: bug fixes
++ 0.1.0 [2016-12]: first release of the theme.
 
 ## License
 
