@@ -1,6 +1,6 @@
 # academic
 
-Academic is a theme with a focus on simplicity, typography and flexibility. I originally designed for my personal blog during my PhD thesis.
+Academic is a [Jekyll](http://jekyllrb.com/) theme with a focus on simplicity, typography and flexibility. I originally designed for my personal blog during my PhD thesis.
 
 ![Academic screenshot](screenshot.png)
 
