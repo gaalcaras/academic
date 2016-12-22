@@ -3,12 +3,12 @@
   <div class="wrapper">
 
       <ul class="info-list footer-col">
+        <li>
         {% if site.title_html %}
-          {% assign title = site.title_html %}
+          <a href="{{ "/" | relative_url}}">{{ site.title_html }}</a>
         {% else %}
-          {% assign title = site.title %}
+          <a href="{{ "/" | relative_url}}"><b>{{ site.title }}</b></a>
         {% endif %}
-        <li><a href="{{ "/" | relative_url}}">{{ title }}</a>
 
         {% if site.author_display %}
         <span class="author"> par
