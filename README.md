@@ -3,6 +3,8 @@
 Academic is a [Jekyll](http://jekyllrb.com/) theme with a focus on simplicity, typography and flexibility.
 I originally designed it for my personal blog during my PhD thesis.
 
+Check out my [personal website](https://gaalcaras.com) or my [blog](https://sociologs.com) to get a better feel for the Academic theme.
+
 ![Academic screenshot](screenshot.png)
 
 **Simplicity**: both in design and configuration, Academic aims to let the writer and its readers focus on the content.
