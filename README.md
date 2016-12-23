@@ -206,6 +206,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/gaalca
 
 ## Release log
 
++ 0.1.3 [2016-12]: design refinements (page and about layouts)
 + 0.1.2 [2016-12]: bug fixes (footer, assets and gemfile cleaning) + `repo` var
 + 0.1.1 [2016-12]: bug fixes (404 page layout, footer, posts list)
 + 0.1.0 [2016-12]: first release of the theme.
