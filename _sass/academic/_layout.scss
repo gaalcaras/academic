@@ -402,8 +402,8 @@
 
 .about-col-1 {
   padding-right: $spacing-unit / 2;
-  width: -webkit-calc(40% - (#{$spacing-unit} / 2));
-  width:         calc(40% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  width:         calc(35% - (#{$spacing-unit} / 2));
 
 
   .user-picture {
@@ -413,9 +413,9 @@
 }
 
 .about-col-2 {
-  padding-left: $spacing-unit / 2;
-  width: -webkit-calc(60% - (#{$spacing-unit} / 2));
-  width:         calc(60% - (#{$spacing-unit} / 2));
+  @include size(small);
+  width: -webkit-calc(65% - (#{$spacing-unit} / 2));
+  width:         calc(65% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {
