@@ -1,0 +1,15 @@
+<ul class="nav-list">
+{% for link in site.nav_ext_links %}
+  {% if link.url and link.name %}
+  <li><a target="_blank" class="page-link" href="{{ link.url }}">{{ link.name | escape }}</a></li>
+  {% endif %}
+{% endfor %}
+
+{% for my_page in site.pages %}
+{% unless my_page.invisible %}
+  {% if my_page.title %}
+  <li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+  {% endif %}
+{% endunless %}
+{% endfor %}
+</ul>
