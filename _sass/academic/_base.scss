@@ -233,8 +233,14 @@ table {
   }
 }
 
+h1 + table, h2 + table,
+h3 + table, h4 + table,
+h5 + table, h6 + table {
+  margin-top: $spacing-unit / 2;
+}
+
 /**
- * Table
+ * Hr
  */
 
 hr {
