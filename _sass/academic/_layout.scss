@@ -385,7 +385,6 @@
 }
 
 .contact-list {
-  @include size(vsmall);
   list-style: none;
   margin-left: 0;
   margin-top: $spacing-unit / 2;
@@ -401,6 +400,7 @@
 }
 
 .about-col-1 {
+  @include size(vsmall);
   padding-right: $spacing-unit / 2;
   width: -webkit-calc(35% - (#{$spacing-unit} / 2));
   width:         calc(35% - (#{$spacing-unit} / 2));
@@ -419,19 +419,31 @@
 }
 
 @include media-query($on-laptop) {
-  .about-col-1,
-  .about-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
+  .about-col {
+    @include size(p);
   }
 }
 
 @include media-query($on-palm) {
   .about-col {
+    @include size(p);
     padding: 0;
     float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+    width: auto;
+  }
+
+  .about-col-1 {
+    padding: 5%;
+    max-width: 200px;
+    margin: auto;
+  }
+
+  .contact-list {
+    margin: 0;
+  }
+
+  .user-picture {
+    max-width: 200px;
   }
 }
 
