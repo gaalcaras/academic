@@ -60,7 +60,7 @@
       {% assign oldest = oldest_post.date | date: "%Y" %}
       {% assign newest = site.time | date: "%Y" %}
       ({% if oldest != newest %}{{ oldest }}-{% endif %}{{ newest }})
-      {% if site.author %}
+      {% if site.author and site.author_display %}
         par <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a> 
       {% endif %}
       {% if site.cc %}
