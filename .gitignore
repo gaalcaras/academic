@@ -1,13 +1,11 @@
 *.gem
 *.sh
+assets/img
 .bundle
 .sass-cache
 _site
 _posts
 _config.yml
-index.md
-about.md
-404.md
-archive.md
-test.md
+*.md
+!README.md
 Gemfile.lock

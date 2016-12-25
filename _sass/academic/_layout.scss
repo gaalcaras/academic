@@ -139,6 +139,16 @@
       padding-bottom: 5px;
     }
 
+    .nav-list {
+      .page-link:hover {
+        color: $brand-color;
+      }
+
+      li:hover {
+        border: none;
+      }
+    }
+
     .page-link {
       display: block;
       padding: 5px 10px;
@@ -365,8 +375,6 @@
   overflow-y: hidden;
 
   @include media-query($on-laptop) {
-    margin-bottom: $spacing-unit / 1.5;
-
     .post-meta {
       margin-bottom: $spacing-unit / 6;
     }
@@ -398,7 +406,11 @@
 
 .with-thumbnail {
   @include media-query($on-laptop) {
-    margin-bottom: 0px;
+    margin-bottom: $spacing-unit / 2;
+  }
+
+  @include media-query($on-palm) {
+    margin-bottom: 0;
   }
 
   .wrapper {
