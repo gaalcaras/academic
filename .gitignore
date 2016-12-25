@@ -1,4 +1,5 @@
 *.gem
+*.sh
 .bundle
 .sass-cache
 _site
@@ -8,4 +9,5 @@ index.md
 about.md
 404.md
 archive.md
+test.md
 Gemfile.lock
