@@ -497,7 +497,20 @@
 
   @include media-query($on-palm) {
     float: none;
+
+    .contact-list {
+      text-align: center;
+
+      &:last-of-type {
+        margin-bottom: $spacing-unit / 2;
+      }
+    }
   }
+
+}
+
+.contact-list-title {
+  display: none;
 }
 
 .contact-list {
