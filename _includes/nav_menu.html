@@ -1,4 +1,4 @@
-<ul class="nav-list">
+<ul class="nav-list {{ include.class }}">
 {% for link in site.nav_ext_links %}
   {% if link.url and link.name %}
   <li><a target="_blank" class="page-link" href="{{ link.url }}">{{ link.name | escape }}</a></li>

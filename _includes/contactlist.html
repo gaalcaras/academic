@@ -1,0 +1,30 @@
+<ul class="contact-list {{ include.class }}">
+  <li>
+    {% include icon-rss.html %}
+  </li>
+
+  {% if site.github_username %}
+  <li>
+    {% include icon-github.html username=site.github_username %}
+  </li>
+  {% endif %}
+
+  {% if site.twitter_username %}
+  <li>
+    {% include icon-twitter.html username=site.twitter_username %}
+  </li>
+  {% endif %}
+
+  {% if site.linkedin_username %}
+  <li>
+    {% include icon-linkedin.html username=site.linkedin_username %}
+  </li>
+  {% endif %}
+
+  {% if site.keybase_username %}
+  <li>
+    {% include icon-keybase.html username=site.keybase_username %}
+  </li>
+  {% endif %}
+
+</ul>

@@ -31,35 +31,8 @@ layout: default
       {% endif %}
     </ul>
 
-    <ul class="contact-list">
-      {% if site.github_username %}
-      <li>
-        {% include icon-github.html username=site.github_username %}
-      </li>
-      {% endif %}
+    {% include contactlist.html %}
 
-      {% if site.twitter_username %}
-      <li>
-        {% include icon-twitter.html username=site.twitter_username %}
-      </li>
-      {% endif %}
-
-      {% if site.linkedin_username %}
-      <li>
-        {% include icon-linkedin.html username=site.linkedin_username %}
-      </li>
-      {% endif %}
-
-    </ul>
-
-    <ul class="contact-list">
-      {% if site.keybase_username %}
-      <li>
-        {% include icon-keybase.html username=site.keybase_username %}
-      </li>
-      {% endif %}
-
-    </ul>
   </div>
   <article class="about-col about-col-2" itemscope itemtype="http://schema.org/BlogPosting">
 

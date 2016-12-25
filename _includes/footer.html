@@ -2,7 +2,7 @@
 
   <div class="wrapper">
 
-      <ul class="info-list footer-col">
+      <ul class="footer-col footer-col-1">
         <li>
         {% if site.title_html %}
           <a href="{{ "/" | relative_url}}">{{ site.title_html }}</a>
@@ -27,22 +27,14 @@
 
       </ul>
 
-      <ul class="follow-list footer-col">
-        <li> </li>
-
-        <li>
-          <a href="/feed.xml">RSS</a>
-        </li>
-
-        {% if site.twitter_username %}
-        <li><a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a></li>
-        {% endif %}
-
-        {% if site.github_username  %}
-        <li><a href="https://github.com/{{ site.github_username }}">Github</a></li>
-        {% endif %}
-
-      </ul>
+      {% if site.pitch %}
+        <nav>
+        {% include nav_menu.html class="footer-col footer-col-2"%}
+        {% include contactlist.html class="single-col" %}
+        </nav>
+      {% else %}
+        {% include contactlist.html class="footer-col footer-col-2" %}
+      {% endif %}
 
     <div class="bottom">
       <div class="tech">
@@ -51,6 +43,7 @@
         + <a target="_blank" href="{{ site.repo }}">Source</a>
         {% endif %}
       </div>
+
       <div class="legal">
       {% if site.cc == null %}©{% endif %}
         {% if site.title %}
@@ -66,8 +59,9 @@
       {% if site.cc %}
       est placé sous licence <a target="_blank" rel="license" href="https://creativecommons.org/licenses/{{ site.cc }}/4.0/" class="cc-licence">CC {{ site.cc }}</a>
       {% endif %}
-           </div>
+     </div>
     </div>
+
   </div>
 </footer>
 

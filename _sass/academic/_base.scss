@@ -294,7 +294,8 @@ hr {
   display: inline-block;
   vertical-align: middle;
 
-  path {
+  circle,
+  path:last-of-type {
     fill: $grey-color;
   }
 }

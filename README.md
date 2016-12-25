@@ -114,7 +114,7 @@ Example:
 title_html: "<b>hello</b>world"
 ```
 
-`pitch`: [optional] a small sentence or motto to quickly describe your blog. If no pitch is detected, Academic will fill the top bar with a navigation menu. If you want to display a short description for your website, Academic will NOT generate a navigation menu. Please note that `pitch` is only used in the top bar ; it is different from the `description` field (used in the footer and the meta tags for search engines).
+`pitch`: [optional] a small sentence or motto to quickly describe your blog. If no pitch is detected, Academic will fill the top bar with a navigation menu. If you want to display a short pitch in the top bar, Academic will put thput the navigation menu in the footer. Please note that `pitch` is only used in the top bar ; it is different from the `description` field (used in the footer and the meta tags for search engines).
 
 `description`: [recommended] short description for search engines. It's displayed in the footer of every page. Not to be confused with `pitch`.
 
