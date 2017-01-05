@@ -13,3 +13,7 @@
   {% if jekyll.environment == 'production' %}
   {% endif %}
 </head>
+
+{% if site.piwik %}
+{% include piwik.html %}
+{% endif %}

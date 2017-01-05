@@ -61,6 +61,7 @@ Table of contents:
     + Hide pages from the navigation menu
     + Add external links in the menu from the `_config.yml` file
 + 404 page layout
++ Piwik tracking
 
 ## Installation
 
@@ -127,6 +128,11 @@ title_html: "<b>hello</b>world"
 `archive_permalink`: [optional] permalink of the archive page. Set to `"/archive"` by default.
 
 `repo`: [optional] link to your website repo. If defined, it's added in the footer. Nothing is displayed otherwise.
+
+`piwik`: [optional]
+
++ `url`: [mandatory] URL of your Piwik Instance without a trailing slash (like `mywebsite.com/piwik`)
++ `site_id`: [mandatory] The ID of your website in your Piwik instance
 
 #### Author
 
