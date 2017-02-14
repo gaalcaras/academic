@@ -17,6 +17,7 @@ layout: default
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
           {% include date.html date=page.date %}
         </time>
+        {% include last_modified_at.html object=page %}
         {% if page.author %} • 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
         {% endif %}

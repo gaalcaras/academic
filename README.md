@@ -173,6 +173,11 @@ nav_ext_links:
   - name: Link 2
     url: http://wallabag.org/
 ```
+#### Plugins
+
+Academic is compatible with the `jekyll-last-modified-at` plugin ([repo](https://github.com/gjtorikian/jekyll-last-modified-at)). If installed, the last modified date will be (discretely) displayed in the posts lists and in the post layout.
+
+If you specified a Github `repo`, the last modified date will point to the revision history of the file.
 
 ### Layouts
 

@@ -333,8 +333,20 @@
   margin-left: 0;
   list-style: none;
 
+  .last-update {
+    display: none;
+    color: $grey-color-light;
+    a {
+      color: $grey-color-light;
+    }
+  }
+
   > li {
     margin-bottom: $spacing-unit;
+
+    &:hover .last-update {
+      display: inline-block;
+    }
   }
 
   .post-link {
@@ -378,6 +390,11 @@
     .post-meta {
       margin-bottom: $spacing-unit / 6;
     }
+  }
+
+  .last-update {
+    color: $grey-color;
+    a { color: inherit }
   }
 
   .post-thumbnail {
