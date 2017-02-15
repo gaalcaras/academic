@@ -16,8 +16,9 @@ layout: default
   {{ content }}
 
   <ul class="post-list">
-    {% for post in site.posts limit:site.nb_posts_page %}
-      {% include post-li.html %}
+    {% assign posts = site.posts | where:"lang",page.lang %}
+    {% for post in posts limit:site.nb_posts_page %}
+        {% include post-li.html %}
     {% endfor %}
   </ul>
 
