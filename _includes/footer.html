@@ -5,13 +5,7 @@
 
       <ul class="footer-col footer-col-1">
         <li>
-          <a href="{% include link.html path="index" %}">
-        {% if site.title_html %}
-            {{ site.title_html }}
-        {% else %}
-          <b>{{ site.title }}</b>
-        {% endif %}
-          </a>
+          {% include sitetitle.html %}
 
         {% if site.author_display %}
         <span class="author">
@@ -26,7 +20,7 @@
         {% endif %}
 
         {% if site.description %}
-        <li>{{ site.description }}</li>
+        <li>{% include i18n.html value=site.description %}</li>
         {% endif %}
 
       </ul>
@@ -50,9 +44,7 @@
 
       <div class="legal">
       {% if site.cc == null %}©{% endif %}
-        {% if site.title %}
-        <a href="{% include link.html path="index" %}">{{ site.title | escape }}</a>
-        {% endif %}
+      {% include sitetitle.html %}
       {% assign oldest_post = site.posts reversed | first %}
       {% assign oldest = oldest_post.date | date: "%Y" %}
       {% assign newest = site.time | date: "%Y" %}

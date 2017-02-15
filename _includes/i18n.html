@@ -1,0 +1,13 @@
+{% assign val = include.value %}
+
+{% if val[page.lang] %}
+  {% assign v = val[page.lang] %}
+{% else %}
+  {% assign v = val %}
+{% endif %}
+
+{% if include.escape %}
+  {{ v | escape | strip_newlines }}
+{% else %}
+  {{ v | strip_newlines }}
+{% endif %}

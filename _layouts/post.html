@@ -43,7 +43,7 @@ layout: default
         <li class="user-name">
           {{ site.author }}
         </li>
-        <li class="user-shortbio">{{ site.shortbio }}</li>
+        <li class="user-shortbio">{% include i18n.html value=site.shortbio %}</li>
       </ul>
   </div>
   {% endif %}

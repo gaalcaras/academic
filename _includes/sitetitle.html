@@ -1,0 +1,19 @@
+{% if include.class %}
+  {% if site.pitch %}
+    {% assign title_class = "site-title with-pitch" %}
+  {% else %}
+    {% assign title_class = "site-title" %}
+  {% endif %}
+{% else %}
+  {% assign title_class = "" %}
+{% endif %}
+
+{% capture title %}
+  {% if site.title_html %}
+    {% include i18n.html value=site.title_html escape=false %}
+  {% else %}
+    {% include i18n.html value=site.title %}
+  {% endif %}
+{% endcapture %}
+
+<a class="{{ title_class }}" href="{% include link.html path="index" %}">{{ title }}</a>

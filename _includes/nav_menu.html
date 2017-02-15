@@ -3,13 +3,7 @@
 {% for link in site.nav_ext_links %}
   {% if link.url and link.name %}
   <li><a target="_blank" class="page-link" href="{{ link.url }}">
-      {% assign name = link.name | first %}
-      {% if name.text %}
-        {% assign name = link.name | where:"lang",page.lang | first %}
-        {{ name.text | escape }}
-      {% else %}
-        {{ link.name | escape }}
-      {% endif %}
+      {% include i18n.html value=link.name %}
   </a></li>
   {% endif %}
 {% endfor %}

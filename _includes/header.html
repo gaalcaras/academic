@@ -2,21 +2,9 @@
 
   <div class="wrapper">
 
+    {% include sitetitle.html class=true %}
     {% if site.pitch %}
-      {% assign title_class = "site-title with-pitch" %}
-    {% else %}
-      {% assign title_class = "site-title" %}
-    {% endif %}
-
-    {% if site.title_html %}
-      {% assign title = site.title_html %}
-    {% else %}
-      {% assign title = site.title escape %}
-    {% endif %}
-
-    <a class="{{ title_class }}" href="{% include link.html path="index" %}">{{ title }}</a>
-    {% if site.pitch %}
-    <span class="site-pitch">{{ site.pitch | espace }}</span>
+      <span class="site-pitch">{% include i18n.html value=site.pitch %}</span>
     {% endif %}
 
     {% if site.pitch == null %}

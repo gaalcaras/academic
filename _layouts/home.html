@@ -9,9 +9,9 @@ layout: default
 {% endif %}
 
 <div class="{{ div_class }}">
-  {% if site.pitch == null %}
-  <p>{{ site.description | escape }}</p>
-  {% endif %}
+  {% unless site.pitch %}
+  <p>{% include i18n.html value=site.description %}</p>
+  {% endunless %}
 
   {{ content }}
 
