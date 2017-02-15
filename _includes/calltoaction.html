@@ -1,9 +1,19 @@
 <div class="colored-block">
-  {% if include.message %}
-  {{ include.message | escape }}
+  {% assign cta = site.data.academic_i18n.cta %}
+  {% if page.layout == "home" or page.layout == "archive" %}
+    {{ cta.like[page.lang] | escape }}
+  {% else if page.layout == "post" %}
+    {{ cta.post[page.lang] | escape }}
+  {% else %}
   {% endif %}
-  Vous pouvez vous abonner au <a href="/feed.xml">fil RSS</a> du blog
+
+  {{ cta.rss[page.lang][0] }}
+  <a href="/feed.xml">{{ cta.rss[page.lang][1]}}</a>
+  {{ cat.rss[page.lang][2]}}
+
   {% if site.twitter_username %}
-  ou suivre <a href="https://twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a> sur Twitter
+    {{ cta.twitter[page.lang][0] }}
+    <a href="https://twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a>
+    {{ cta.twitter[page.lang][1] }}
   {% endif %}.
 </div>

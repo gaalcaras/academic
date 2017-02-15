@@ -14,8 +14,7 @@
       {% assign title = site.title escape %}
     {% endif %}
 
-    {% assign home = site.pages | where_exp:"p","p.path contains 'index'" | where:"lang",page.lang | first %}
-    <a class="{{ title_class }}" href="{{ home.url }}">{{ title }}</a>
+    <a class="{{ title_class }}" href="{% include link.html path="index" %}">{{ title }}</a>
     {% if site.pitch %}
     <span class="site-pitch">{{ site.pitch | espace }}</span>
     {% endif %}

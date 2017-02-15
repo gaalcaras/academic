@@ -1,17 +1,21 @@
+{% assign i18n = site.data.academic_i18n %}
 <footer class="site-footer">
 
   <div class="wrapper">
 
       <ul class="footer-col footer-col-1">
         <li>
+          <a href="{% include link.html path="index" %}">
         {% if site.title_html %}
-          <a href="{{ "/" | relative_url}}">{{ site.title_html }}</a>
+            {{ site.title_html }}
         {% else %}
-          <a href="{{ "/" | relative_url}}"><b>{{ site.title }}</b></a>
+          <b>{{ site.title }}</b>
         {% endif %}
+          </a>
 
         {% if site.author_display %}
-        <span class="author"> par
+        <span class="author">
+          {{ i18n.by[page.lang] }}
           {% if site.author_website %}
           <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a>
           {% else %}
@@ -47,17 +51,21 @@
       <div class="legal">
       {% if site.cc == null %}©{% endif %}
         {% if site.title %}
-        <a href="{{ "/" | relative_url}}">{{ site.title | escape }}</a>
+        <a href="{% include link.html path="index" %}">{{ site.title | escape }}</a>
         {% endif %}
       {% assign oldest_post = site.posts reversed | first %}
       {% assign oldest = oldest_post.date | date: "%Y" %}
       {% assign newest = site.time | date: "%Y" %}
       ({% if oldest != newest %}{{ oldest }}-{% endif %}{{ newest }})
       {% if site.author and site.author_display %}
-        par <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a> 
+        {{ i18n.legal[page.lang][0] }}
+        <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a> 
       {% endif %}
       {% if site.cc %}
-      est placé sous licence <a target="_blank" rel="license" href="https://creativecommons.org/licenses/{{ site.cc }}/4.0/" class="cc-licence">CC {{ site.cc }}</a>
+        {{ i18n.legal[page.lang][1] }}
+        <a target="_blank" rel="license" href="https://creativecommons.org/licenses/{{ site.cc }}/4.0/" class="cc-licence">
+          CC {{ site.cc }}
+        </a>
       {% endif %}
      </div>
     </div>

@@ -10,11 +10,12 @@
     <span class="last-update">·
 
     {% if site.repo %}
-    <a title="Voir l'historique des révisions de ce billet"
+    <a title="{{ site.data.academic_i18n.revhistory[page.lang] }}"
        href="{{site.repo}}/commits/master/{{object.path}}">
     {% endif %}
 
-    mis à jour le {% include date.html date=object.last_modified_at %}
+    {{ site.data.academic_i18n.lastupdated[page.lang] }}
+    {% include date.html date=object.last_modified_at %}
 
     {% if site.repo %}
     </a>

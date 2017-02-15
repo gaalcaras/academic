@@ -1,0 +1,2 @@
+{% assign object = site.pages | where_exp:"p","p.path contains include.path" | where:"lang",page.lang | first %}
+{{ object.url }}

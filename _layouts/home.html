@@ -15,24 +15,16 @@ layout: default
 
   {{ content }}
 
-  <ul class="post-list">
-    {% assign posts = site.posts | where:"lang",page.lang %}
-    {% for post in posts limit:site.nb_posts_page %}
-        {% include post-li.html %}
-    {% endfor %}
-  </ul>
+  {% include post-ul.html limit=true %}
 
-  {% include calltoaction.html message="Le blog vous intéresse ?" %}
+  {% include calltoaction.html %}
 
   {% assign nb_posts = site.posts | size %}
-  {% if site.archive_permalink %}
-    {% assign archive_link = site.archive_permalink %}
-  {% else %}
-    {% assign archive_link = "/archive" %}
-  {% endif %}
 
   {% if nb_posts > site.nb_posts_page %}
-  <div class="archive">Voir <a href="{{ archive_link }}">tous les articles publiés</a>.</div>
+  <div class="archive">
+    {{ site.data.academic_i18n.all_posts[page.lang][0] }}
+    <a href="{% include link.html path="archive" %}">{{ site.data.academic_i18n.all_posts[page.lang][1] }}</a>.</div>
   {% endif %}
 
 </div>

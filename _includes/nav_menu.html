@@ -1,4 +1,4 @@
-<span class="nav-list-title">Menu :</span>
+<span class="nav-list-title">{{ site.data.academic_i18n.menu[page.lang] }}</span>
 <ul class="nav-list {{ include.class }}">
 {% for link in site.nav_ext_links %}
   {% if link.url and link.name %}
