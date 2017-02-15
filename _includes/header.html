@@ -38,3 +38,20 @@
   </div>
 
 </header>
+
+{% assign pagename = page.path | basename | split:"." | first %}
+
+{% if page.layout == "post" %}
+  {% assign i18n_posts = site.posts | where_exp:"p","p.path contains pagename" %}
+{% else %}
+  {% assign i18n_posts = site.pages | where_exp:"p","p.path contains pagename" %}
+{% endif %}
+
+{% for t_lang in site.langs %}
+  {% assign t = i18n_posts | where:"lang",t_lang | first %}
+  {% if t %}
+  <a href="{{ t.url }}" hreflang="{{ t_lang }}" title="{{ t.title }}">
+  {{ t_lang }}
+  </a>
+  {% endif %}
+{% endfor %}
