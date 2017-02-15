@@ -2,11 +2,21 @@
 <ul class="nav-list {{ include.class }}">
 {% for link in site.nav_ext_links %}
   {% if link.url and link.name %}
-  <li><a target="_blank" class="page-link" href="{{ link.url }}">{{ link.name | escape }}</a></li>
+  <li><a target="_blank" class="page-link" href="{{ link.url }}">
+      {% assign name = link.name | first %}
+      {% if name.text %}
+        {% assign name = link.name | where:"lang",page.lang | first %}
+        {{ name.text | escape }}
+      {% else %}
+        {{ link.name | escape }}
+      {% endif %}
+  </a></li>
   {% endif %}
 {% endfor %}
 
-{% for my_page in site.pages %}
+{% assign pages = site.pages | where:"lang",page.lang %}
+
+{% for my_page in pages %}
 {% unless my_page.invisible %}
   {% if my_page.title %}
   <li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
