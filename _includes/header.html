@@ -14,7 +14,8 @@
       {% assign title = site.title escape %}
     {% endif %}
 
-    <a class="{{ title_class }}" href="{{ "/" | relative_url}}">{{ title }}</a>
+    {% assign home = site.pages | where_exp:"p","p.path contains 'index'" | where:"lang",page.lang | first %}
+    <a class="{{ title_class }}" href="{{ home.url }}">{{ title }}</a>
     {% if site.pitch %}
     <span class="site-pitch">{{ site.pitch | espace }}</span>
     {% endif %}
@@ -39,7 +40,6 @@
 
 </header>
 
-{% assign pagename = page.path | basename | split:"." | first %}
 
 {% if page.layout == "post" %}
   {% assign i18n_posts = site.posts | where_exp:"p","p.path contains pagename" %}
