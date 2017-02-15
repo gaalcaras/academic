@@ -40,6 +40,7 @@
 
 </header>
 
+{% assign pagename = page.path | split:"." | first %}
 
 {% if page.layout == "post" %}
   {% assign i18n_posts = site.posts | where_exp:"p","p.path contains pagename" %}
