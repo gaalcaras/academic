@@ -8,6 +8,56 @@
 
   // Positioning context for the mobile navigation icon
   position: relative;
+
+  .lang-selector {
+    position: absolute;
+    z-index: 1000;
+    right: 0px;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+    padding: 10px;
+
+    .lang {
+      list-style: none;
+      line-height: 40px;
+
+      &:nth-child(n+2) {
+        display: none;
+        padding: 10px 0 10px 0;
+      }
+
+      a {
+        color: $grey-color-light;
+        font-variant: small-caps;
+        text-transform: capitalize;
+      }
+
+    }
+
+    &:hover {
+      padding-bottom: 0px;
+      background: $grey-color;
+
+      .lang:first-child {
+        padding-bottom: 10px;
+      }
+
+      .lang a {
+        color: $brand-color;
+
+        &:hover {
+          text-decoration: none;
+          color: $grey-color-light;
+        }
+      }
+
+      .lang:nth-child(n+2) {
+        border-top: 1px solid $grey-color-light;
+        display: block;
+      }
+    }
+  }
 }
 
 .site-title {
@@ -256,6 +306,29 @@
       text-transform: uppercase;
     }
 
+    .lang-selector {
+      display: inline-block;
+      list-style: none;
+      text-transform: uppercase;
+      color: $grey-color;
+      margin-top: $spacing-unit / 4;
+      margin-bottom: 0;
+      padding: 10px;
+
+      .lang {
+        display: inline-block;
+
+        a {
+          color: $grey-color;
+        }
+
+        &:nth-child(n+2) {
+          &:before {
+            content:"|"
+          }
+        }
+      }
+    }
   }
 
 }

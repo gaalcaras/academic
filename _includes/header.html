@@ -23,27 +23,10 @@
     </nav>
     {% endif %}
 
+    {% if site.langs %}
+      {% include lang_selector.html %}
+    {% endif %}
+
   </div>
 
 </header>
-
-{% assign pagename = page.path | split:"." | first %}
-
-{% if page.layout == "post" %}
-  {% assign i18n_posts = site.posts | where_exp:"p","p.path contains pagename" %}
-{% else %}
-  {% assign i18n_posts = site.pages | where_exp:"p","p.path contains pagename" %}
-{% endif %}
-
-{% for t_lang in site.langs %}
-  {% assign t = i18n_posts | where:"lang",t_lang | first %}
-  {% if t %}
-  <a href="{{ t.url }}" hreflang="{{ t_lang }}" title="{{ t.title }}">
-  {% endif %}
-
-  {{ t_lang }}
-
-  {% if t %}
-  </a>
-  {% endif %}
-{% endfor %}

@@ -35,6 +35,11 @@
       {% endif %}
 
     <div class="bottom">
+
+      {% if site.langs %}
+        {% include lang_selector.html %}
+      {% endif %}
+
       <div class="tech">
         <a target="_blank" href="https://jekyllrb.com/">Jekyll</a> + <a target="_blank" href="https://github.com/gaalcaras/academic">Academic</a>
         {% if site.repo %}

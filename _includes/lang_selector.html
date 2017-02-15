@@ -1,0 +1,33 @@
+{% assign pagename = page.path | split:"." | first %}
+{% assign versions = site.data.academic_i18n.versions %}
+
+{% if page.layout == "post" %}
+  {% assign i18n_posts = site.posts | where_exp:"p","p.path contains pagename" %}
+{% else %}
+  {% assign i18n_posts = site.pages | where_exp:"p","p.path contains pagename" %}
+{% endif %}
+
+<ul class="lang-selector">
+  <li class="lang">
+    <a href="{{ page.url }}" hreflang="{{ page.lang }}" title="{{ versions[page.lang] }}">
+      {{ page.lang }}
+    </a>
+  </li>
+
+{% for t_lang in site.langs %}
+  {% unless t_lang == page.lang %}
+    {% assign t = i18n_posts | where:"lang",t_lang | first %}
+    <li class="lang">
+    {% if t %}
+    <a href="{{ t.url }}" hreflang="{{ t_lang }}" title="{{ versions[t_lang] }}">
+    {% endif %}
+
+    {{ t_lang }}
+
+    {% if t %}
+      </a>
+    {% endif %}
+    </li>
+  {% endunless %}
+{% endfor %}
+</ul>
