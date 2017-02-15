@@ -52,7 +52,11 @@
   {% assign t = i18n_posts | where:"lang",t_lang | first %}
   {% if t %}
   <a href="{{ t.url }}" hreflang="{{ t_lang }}" title="{{ t.title }}">
+  {% endif %}
+
   {{ t_lang }}
+
+  {% if t %}
   </a>
   {% endif %}
 {% endfor %}
