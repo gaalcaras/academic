@@ -96,6 +96,14 @@ Or install it yourself as:
 $ gem install academic
 ```
 
+Then add the `jekyll-data` plugin to your `Gemfile` ([see also](https://github.com/ashmaroli/jekyll-data#installation)):
+
+```ruby
+group :jekyll_plugins do
+  gem 'jekyll-data'
+end
+```
+
 I suggest you install and use `redcarpet` to generate your markdown ([read more](http://jekyllrb.com/docs/configuration/#redcarpet)).
 
 ## Usage
