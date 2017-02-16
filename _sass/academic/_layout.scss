@@ -4,14 +4,22 @@
 .site-header {
   border-top: 5px solid $grey-color;
   border-bottom: 1px solid $grey-color-light;
-  min-height: 60px;
+
+  @include media-query($on-laptop) {
+    min-height: 100px;
+  }
 
   // Positioning context for the mobile navigation icon
   position: relative;
 
+  .site-header-float {
+    min-height: 60px;
+  }
+
   .lang-selector {
     position: absolute;
-    z-index: 1000;
+    z-index: 900;
+    top: 0px;
     right: 0px;
     width: 30px;
     text-align: center;
@@ -19,6 +27,8 @@
     padding: 10px;
 
     .lang {
+      font-variant: small-caps;
+      text-transform: capitalize;
       list-style: none;
       line-height: 40px;
 
@@ -29,8 +39,6 @@
 
       a {
         color: $grey-color-light;
-        font-variant: small-caps;
-        text-transform: capitalize;
       }
 
     }
@@ -57,6 +65,53 @@
         display: block;
       }
     }
+
+    @include media-query($on-laptop) {
+      position: relative;
+      left: 0;
+      width: auto;
+      clear: both;
+      margin: 0 -$spacing-unit/2 0 -$spacing-unit/2;
+      padding: 5px 5px 5px $spacing-unit/2;
+      background: $grey-color-lighter;
+      text-align: left;
+      @include size(small);
+
+      .lang:nth-child(n+1) {
+        padding: 5px 5px 5px 0;
+        line-height: normal;
+        display: inline-block;
+
+        a {
+          color: $grey-color-dark;
+
+          &:hover {
+            text-decoration: underline
+          }
+        }
+      }
+
+      .lang:nth-child(n+2):before {
+        content: "| ";
+      }
+
+      &:hover {
+        background: $grey-color-lighter;
+        padding: 5px 5px 5px $spacing-unit/2;
+
+        .lang:nth-child(n+1) {
+          padding: 5px 5px 5px 0;
+          display: inline-block;
+          border: none;
+
+          a { color: $grey-color-dark; }
+        }
+      }
+
+      @include media-query($on-palm) {
+        margin-top: 0px;
+      }
+    }
   }
 }
 
@@ -67,7 +122,6 @@
   line-height: 55px;
   letter-spacing: -1px;
   margin-bottom: -5px;
-  float: left;
 
   &,
   &:visited {
@@ -118,6 +172,7 @@
 .site-nav {
   float: right;
   line-height: 60px;
+  z-index: 1000;
 
   .menu-icon {
     display: none;

@@ -2,6 +2,7 @@
 
   <div class="wrapper">
 
+    <div class="site-header-float">
     {% include sitetitle.html class=true %}
     {% if site.pitch %}
       <span class="site-pitch">{% include i18n.html value=site.pitch %}</span>
@@ -22,6 +23,7 @@
       </div>
     </nav>
     {% endif %}
+    </div>
 
     {% if site.langs %}
       {% include lang_selector.html %}
