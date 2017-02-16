@@ -17,7 +17,6 @@ Check out my [personal website](https://gaalcaras.com) or my [blog](https://soci
 
 Table of contents:
 
-
 * [Features](#features)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -26,6 +25,8 @@ Table of contents:
 		* [General settings](#general-settings)
 		* [Author](#author)
 		* [Navigation menu](#navigation-menu)
+		* [Multilingual and i18n support](#multilingual-and-i18n-support)
+		* [Plugins](#plugins)
 	* [Layouts](#layouts)
 		* [Post layout](#post-layout)
 		* [Page layout](#page-layout)
@@ -44,6 +45,10 @@ Table of contents:
     + High contrast colors and backgrounds as much as possible ([read more](http://contrastrebellion.com/), [and more](https://backchannel.com/how-the-web-became-unreadable-a781ddc711b6))
     + Comfortable line length (around 66 characters, [read more](http://webtypography.net/2.1.2))
     + Attention to vertical rhythm, law of proximity and so on ([read more](http://typographyhandbook.com/))
++ If you'd like a **multilingual** website, Academic has basic **i18n** support (no plugin required):
+    + English and French translations are included in the theme
+    + Lang selector to change languages automatically added in header and footer
+    + Basic SEO support for multilingual pages
 + Add an **image thumbnail** to illustrate your posts. It's displayed both on the post list and on the post itself.
 + Add a **summary** to your posts. It's used in the posts lists and on the post itself.
 + **MathJax** support (loaded only on posts layouts)
@@ -173,6 +178,71 @@ nav_ext_links:
   - name: Link 2
     url: http://wallabag.org/
 ```
+
+#### Multilingual and i18n support
+
+Academic works perfectly well as a single language website.
+But if you need to translate part of your pages or posts, it also supports basic i18n and multilingual features.
+The theme includes French and English versions as of now.
+
+To enable multilingual mode, just add the following to your `_config.yml`:
+
+```yaml
+langs: ["fr", "en"]
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: "fr"
+```
+
+The `langs` variable should be an array containing your languages.
+Important: the first item should be your "default" language (ie the language that you translate posts from or/and that has the largest content available).
+
+Don't forget to define a default lang for your whole website.
+
+If you want to translate some of the variables in your `_config.yml`, you can just do this:
+
+```yaml
+title:
+  fr: "Nom du site en Français"
+  en: "English name of the website"
+```
+
+Translating posts and pages is very easy.
+Let's say my default lang is `fr` and I want to translate `_posts/billet-au-hasard.md` to English.
+
+```yaml
+---
+layout: post
+title:  "Billet au hasard"
+permalink: /fr/billet-au-hasard/
+date:   2017-02-14 15:32:29 +0100
+---
+```
+
+First, I'll create a new file named `_posts/billet-au-hasard.en.md`.
+Both files have to share the *exact same name before the first extension* (`.md` or `.en.md`) in order to signal to Academic that these posts are translations of eachother.
+
+Then, in `_posts/billet-au-hasard.en.md`, add the lang and change the permalink in your frontmatter:
+
+```yaml
+layout: post
+title: "Random post"
+permalink: /en/random-post
+date:   2017-02-14 15:32:29 +0100
+lang: en
+```
+
+That's it!
+Academic will handle the lang selector and will add `<link />` to the `<head>` section to improve SEO.
+
+Note that you have to handle the permalinks manually.
+I recommend that you use the subdirectory `/lang/` naming convention everywhere, as exemplified above.
+You should at least take care of your homepage URL.
+
+If you'd like Academic to support more languages, please contribute by adding the appropriate translations in `/_data/i18n_academic.yml`.
+
 #### Plugins
 
 Academic is compatible with the `jekyll-last-modified-at` plugin ([repo](https://github.com/gjtorikian/jekyll-last-modified-at)). If installed, the last modified date will be (discretely) displayed in the posts lists and in the post layout.
