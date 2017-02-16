@@ -10,6 +10,24 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{% include i18n.html value=site.title %}" href="{{ "/feed.xml" | relative_url }}">
 
+  {% assign pagename = page.path | split:"." | first %}
+
+  {% if page.layout == "post" %}
+    {% assign i18n_posts = site.posts | where_exp:"p","p.path contains pagename" %}
+  {% else %}
+    {% assign i18n_posts = site.pages | where_exp:"p","p.path contains pagename" %}
+  {% endif %}
+
+  {% for t_lang in site.langs %}
+    {% unless t_lang == page.lang %}
+      {% assign t = i18n_posts | where:"lang",t_lang | first %}
+
+      {% if t %}
+      <link rel="alternate" hreflang="{{ t_lang }}" href="{{ t.url }}" />
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+
   {% if site.piwik %}
   {% include piwik.html %}
   {% endif %}
