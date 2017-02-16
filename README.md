@@ -8,10 +8,12 @@ Check out my [personal website](https://gaalcaras.com) or my [blog](https://soci
 ![Academic screenshot](screenshot.png)
 
 **Simplicity**: both in design and configuration, Academic aims to let the writer and its readers focus on the content.
+Almost all of the theme configuration happens in the `_config.yml` file.
 
 **Typography**: the goal of Academic is to let the author write very long and detailed posts, while being kind to its readers' eyes.
 
 **Flexibility**: Academic can be used to generate different layouts while keeping the same look and feel.
+All features require you to *opt in*, which means that you can either use a very lean `_config.yml` or a very detailed one if you want to use more features.
 
 ---
 
@@ -46,7 +48,7 @@ Table of contents:
     + Comfortable line length (around 66 characters, [read more](http://webtypography.net/2.1.2))
     + Attention to vertical rhythm, law of proximity and so on ([read more](http://typographyhandbook.com/))
 + If you'd like a **multilingual** website, Academic has basic **i18n** support (no plugin required):
-    + English and French translations are included in the theme
+    + *Supported languages* : English, French
     + Lang selector to change languages automatically added in header and footer
     + Basic SEO support for multilingual pages
 + Add an **image thumbnail** to illustrate your posts. It's displayed both on the post list and on the post itself.
@@ -182,8 +184,14 @@ nav_ext_links:
 #### Multilingual and i18n support
 
 Academic works perfectly well as a single language website.
-But if you need to translate part of your pages or posts, it also supports basic i18n and multilingual features.
-The theme includes French and English versions as of now.
+By default, Academic is in English.
+You can easily switch to another supported language :
+
+```yaml
+langs: ["fr"]
+```
+
+If you need to translate part of your pages or posts, Academic also supports basic i18n and multilingual features.
 
 To enable multilingual mode, just add the following to your `_config.yml`:
 
@@ -198,6 +206,7 @@ defaults:
 
 The `langs` variable should be an array containing your languages.
 Important: the first item should be your "default" language (ie the language that you translate posts from or/and that has the largest content available).
+The double quotes around the language *do* matter.
 
 Don't forget to define a default lang for your whole website.
 
