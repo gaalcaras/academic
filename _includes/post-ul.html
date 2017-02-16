@@ -1,4 +1,5 @@
 {% assign plang = page.lang | default: site.langs[0] | default: "none" %}
+{% assign nblang = site.langs | size %}
 {% if include.limit %}
   {% assign limit = site.nb_posts_page %}
 {% else %}
@@ -6,7 +7,7 @@
 {% endif %}
 
 <ul class="post-list">
-  {% if plang != "none" %}
+  {% if plang != "none" and nblang > 1 %}
     {% assign posts = site.posts | where:"lang",plang %}
   {% else %}
     {% assign posts = site.posts %}
