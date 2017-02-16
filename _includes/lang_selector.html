@@ -8,6 +8,9 @@
 {% endif %}
 
 <ul class="lang-selector">
+  <span class="lang-intro">
+    {{ site.data.academic_i18n.langs_avail[page.lang] }}
+  </span>
   <li class="lang">
     <a href="{{ page.url }}" hreflang="{{ page.lang }}" title="{{ versions[page.lang] }}">
       {{ page.lang }}

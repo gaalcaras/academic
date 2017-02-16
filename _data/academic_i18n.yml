@@ -50,3 +50,6 @@ notfound:
 versions:
   fr: "Version française"
   en: "English version"
+langs_avail:
+  fr: "Langues :"
+  en: "Languages:"

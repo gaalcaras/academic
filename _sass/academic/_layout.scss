@@ -26,15 +26,23 @@
     margin-right: 10px;
     padding: 10px;
 
+    .lang-intro {
+      display: none;
+    }
+
     .lang {
       font-variant: small-caps;
       text-transform: capitalize;
       list-style: none;
       line-height: 40px;
 
-      &:nth-child(n+2) {
+      &:nth-child(n+3) {
         display: none;
         padding: 10px 0 10px 0;
+      }
+
+      &:nth-child(2) {
+        padding-bottom: 10px;
       }
 
       a {
@@ -60,7 +68,7 @@
         }
       }
 
-      .lang:nth-child(n+2) {
+      .lang:nth-child(n+3) {
         border-top: 1px solid $grey-color-light;
         display: block;
       }
@@ -77,6 +85,10 @@
       text-align: left;
       @include size(small);
 
+      .lang-intro {
+        display: inline-block;
+      }
+
       .lang:nth-child(n+1) {
         padding: 5px 5px 5px 0;
         line-height: normal;
@@ -91,7 +103,7 @@
         }
       }
 
-      .lang:nth-child(n+2):before {
+      .lang:nth-child(n+3):before {
         content: "| ";
       }
 
@@ -377,7 +389,7 @@
           color: $grey-color;
         }
 
-        &:nth-child(n+2) {
+        &:nth-child(n+3) {
           &:before {
             content:"|"
           }
