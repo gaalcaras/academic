@@ -1,10 +1,11 @@
-{% if page.lang != "en" %}
-  {% assign dateformat = site.data.academic_i18n.dateformat[page.lang] %}
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
+{% if plang != "en" %}
+  {% assign dateformat = site.data.academic_i18n.dateformat[plang] %}
   {% assign date = include.date | date: dateformat %}
   {% assign eng_month = include.date | date: "%B" %}
   {% assign num_month = include.date | date: "%m" | minus: 1 %}
 
-  {{ date | replace:eng_month, site.data.academic_i18n.months[page.lang][num_month] }}
+  {{ date | replace:eng_month, site.data.academic_i18n.months[plang][num_month] }}
 {% else %}
-  {{ include.date | date: site.data.academic_i18n.dateformat[page.lang] }}
+  {{ include.date | date: site.data.academic_i18n.dateformat[plang] }}
 {% endif %}

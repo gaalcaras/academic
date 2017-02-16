@@ -1,3 +1,4 @@
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +20,7 @@
   {% endif %}
 
   {% for t_lang in site.langs %}
-    {% unless t_lang == page.lang %}
+    {% unless t_lang == plang %}
       {% assign t = i18n_posts | where:"lang",t_lang | first %}
 
       {% if t %}

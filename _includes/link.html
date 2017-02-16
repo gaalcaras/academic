@@ -1,2 +1,3 @@
-{% assign object = site.pages | where_exp:"p","p.path contains include.path" | where:"lang",page.lang | first %}
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
+{% assign object = site.pages | where_exp:"p","p.path contains include.path" | where:"lang",plang | first %}
 {{ object.url }}

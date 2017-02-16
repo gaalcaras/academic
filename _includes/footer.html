@@ -1,3 +1,4 @@
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
 {% assign i18n = site.data.academic_i18n %}
 <footer class="site-footer">
 
@@ -9,7 +10,7 @@
 
         {% if site.author_display %}
         <span class="author">
-          {{ i18n.by[page.lang] }}
+          {{ i18n.by[plang] }}
           {% if site.author_website %}
           <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a>
           {% else %}
@@ -55,11 +56,11 @@
       {% assign newest = site.time | date: "%Y" %}
       ({% if oldest != newest %}{{ oldest }}-{% endif %}{{ newest }})
       {% if site.author and site.author_display %}
-        {{ i18n.legal[page.lang][0] }}
+        {{ i18n.legal[plang][0] }}
         <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a> 
       {% endif %}
       {% if site.cc %}
-        {{ i18n.legal[page.lang][1] }}
+        {{ i18n.legal[plang][1] }}
         <a target="_blank" rel="license" href="https://creativecommons.org/licenses/{{ site.cc }}/4.0/" class="cc-licence">
           CC {{ site.cc }}
         </a>

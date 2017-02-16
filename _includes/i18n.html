@@ -1,7 +1,8 @@
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
 {% assign val = include.value %}
 
-{% if val[page.lang] %}
-  {% assign v = val[page.lang] %}
+{% if val[plang] %}
+  {% assign v = val[plang] %}
 {% else %}
   {% assign v = val %}
 {% endif %}

@@ -1,6 +1,7 @@
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
 <a href="/feed.xml" title="RSS"><span class="icon icon--feed">{% include icon-rss.svg %}</span>
   <span class="username">
-    {{ site.data.academic_i18n.feed[page.lang] }}
+    {{ site.data.academic_i18n.feed[plang] }}
   </span>
 </a>
 

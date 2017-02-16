@@ -1,5 +1,6 @@
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
 <span class="contact-list-title">
-  {{ site.data.academic_i18n.links[page.lang] }}
+  {{ site.data.academic_i18n.links[plang] }}
 </span>
 <ul class="contact-list {{ include.class }}">
   <li>

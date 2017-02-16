@@ -1,3 +1,4 @@
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
 {% assign pagename = page.path | split:"." | first %}
 {% assign versions = site.data.academic_i18n.versions %}
 {% assign no_versions = site.data.academic_i18n.no_versions %}
@@ -10,16 +11,16 @@
 
 <ul class="lang-selector">
   <span class="lang-intro">
-    {{ site.data.academic_i18n.langs_avail[page.lang] }}
+    {{ site.data.academic_i18n.langs_avail[plang] }}
   </span>
   <li class="lang">
-    <a href="{{ page.url }}" title="{{ versions[page.lang] }} {{ page.title }}">
-      {{ page.lang }}
+    <a href="{{ page.url }}" title="{{ versions[plang] }} {{ page.title }}">
+      {{ plang }}
     </a>
   </li>
 
 {% for t_lang in site.langs %}
-  {% unless t_lang == page.lang %}
+  {% unless t_lang == plang %}
     {% assign t = i18n_posts | where:"lang",t_lang | first %}
     <li class="lang">
     {% if t %}

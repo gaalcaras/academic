@@ -1,4 +1,5 @@
-<span class="nav-list-title">{{ site.data.academic_i18n.menu[page.lang] }}</span>
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
+<span class="nav-list-title">{{ site.data.academic_i18n.menu[plang] }}</span>
 <ul class="nav-list {{ include.class }}">
 {% for link in site.nav_ext_links %}
   {% if link.url and link.name %}
@@ -8,7 +9,7 @@
   {% endif %}
 {% endfor %}
 
-{% assign pages = site.pages | where:"lang",page.lang %}
+{% assign pages = site.pages | where:"lang",plang %}
 
 {% for my_page in pages %}
 {% unless my_page.invisible %}
