@@ -48,8 +48,8 @@ notfound:
   fr: "Cette page a probablement déménagé vers une nouvelle adresse..."
   en: "I guess this page has moved somewhere else..."
 versions:
-  fr: "Version française"
-  en: "English version"
+  fr: "Version française :"
+  en: "English version:"
 langs_avail:
   fr: "Langues :"
   en: "Languages:"

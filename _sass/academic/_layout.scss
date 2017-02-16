@@ -354,6 +354,10 @@
     a .username:hover {
       text-decoration: underline;
     }
+
+    @include media-query($on-palm) {
+      margin-bottom: $spacing-unit / 2;
+    }
   }
 
   .bottom {
@@ -364,6 +368,10 @@
     text-align: center;
     margin-top: $spacing-unit;
     margin-bottom: $spacing-unit;
+
+    @include media-query($on-palm) {
+      margin-top: 0px;
+    }
 
     a {
       color: $grey-color-light;
@@ -376,14 +384,23 @@
     .lang-selector {
       display: inline-block;
       list-style: none;
-      text-transform: uppercase;
       color: $grey-color;
-      margin-top: $spacing-unit / 4;
-      margin-bottom: 0;
+      margin: $spacing-unit / 4 0 0 0;
       padding: 10px;
+
+      @include media-query($on-palm) {
+        text-align: left;
+        padding-left: 0px;
+        margin: 0px 0px $spacing-unit/2 0px;
+
+        .lang-intro {
+          font-weight: bold;
+        }
+      }
 
       .lang {
         display: inline-block;
+        text-transform: lowercase;
 
         a {
           color: $grey-color;
