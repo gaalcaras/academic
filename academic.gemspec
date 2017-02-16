@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "academic"
-  spec.version       = "0.4.0"
+  spec.version       = "0.5.0"
   spec.authors       = ["gaalcaras"]
   spec.email         = ["gaby.alcaras@gmail.com"]
 
@@ -10,7 +10,9 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/gaalcaras/academic"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_data|_includes|_sass|LICENSE|README)}i) }
+
+  spec.add_runtime_dependency "jekyll-data", '~> 1.0'
 
   spec.add_development_dependency "jekyll", "~> 3.3"
   spec.add_development_dependency "bundler", "~> 1.12"
