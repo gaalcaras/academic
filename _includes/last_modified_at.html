@@ -1,3 +1,4 @@
+{% assign plang = page.lang | default: site.langs[0] | default: "en" %}
 {% assign object = include.object %}
 
 {% if object.last_modified_at %}
@@ -10,11 +11,11 @@
     <span class="last-update">·
 
     {% if site.repo %}
-    <a title="{{ site.data.academic_i18n.revhistory[page.lang] }}"
+    <a title="{{ site.data.academic_i18n.revhistory[plang] }}"
        href="{{site.repo}}/commits/master/{{object.path}}">
     {% endif %}
 
-    {{ site.data.academic_i18n.lastupdated[page.lang] }}
+    {{ site.data.academic_i18n.lastupdated[plang] }}
     {% include date.html date=object.last_modified_at %}
 
     {% if site.repo %}

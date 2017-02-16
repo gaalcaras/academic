@@ -1,4 +1,5 @@
 {% assign plang = page.lang | default: site.langs[0] | default: "en" %}
+{% assign nblangs = site.langs | size %}
 <span class="nav-list-title">{{ site.data.academic_i18n.menu[plang] }}</span>
 <ul class="nav-list {{ include.class }}">
 {% for link in site.nav_ext_links %}
@@ -9,7 +10,11 @@
   {% endif %}
 {% endfor %}
 
-{% assign pages = site.pages | where:"lang",plang %}
+{% if nblangs > 1 %}
+  {% assign pages = site.pages | where:"lang",plang %}
+{% else %}
+  {% assign pages = site.pages %}
+{% endif %}
 
 {% for my_page in pages %}
 {% unless my_page.invisible %}

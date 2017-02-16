@@ -1,3 +1,10 @@
 {% assign plang = page.lang | default: site.langs[0] | default: "en" %}
-{% assign object = site.pages | where_exp:"p","p.path contains include.path" | where:"lang",plang | first %}
+{% assign nblangs = site.langs | size %}
+{% assign objects = site.pages | where_exp:"p","p.path contains include.path" %}
+
+{% if nblangs > 1 %}
+  {% assign object = objects | where:"lang",plang | first %}
+{% else %}
+  {% assign object = objects | first %}
+{% endif %}
 {{ object.url }}
