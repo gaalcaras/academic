@@ -1,5 +1,6 @@
 {% assign pagename = page.path | split:"." | first %}
 {% assign versions = site.data.academic_i18n.versions %}
+{% assign no_versions = site.data.academic_i18n.no_versions %}
 
 {% if page.layout == "post" %}
   {% assign i18n_posts = site.posts | where_exp:"p","p.path contains pagename" %}
@@ -23,16 +24,18 @@
     {% assign t = i18n_posts | where:"lang",t_lang | first %}
     <li class="lang">
     {% if t %}
-    <a href="{{ t.url }}" rel="alternate" hreflang="{{ t_lang }}"
-       title="{{ versions[t_lang] }} {{ t.title }}">
+      <a href="{{ t.url }}" rel="alternate" hreflang="{{ t_lang }}"
+         title="{{ versions[t_lang] }} {{ t.title }}">
     {% else %}
-    <a href="{{ t.url }}" hreflang="{{ t_lang }}" title="{{ versions[t_lang] }}">
+      <span class="no-version" title="{{ no_versions[t_lang] }}">
     {% endif %}
 
     {{ t_lang }}
 
     {% if t %}
       </a>
+    {% else %}
+      </span>
     {% endif %}
     </li>
   {% endunless %}

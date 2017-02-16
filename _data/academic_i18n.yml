@@ -50,6 +50,9 @@ notfound:
 versions:
   fr: "Version française :"
   en: "English version:"
+no_versions:
+  fr: "La version française de cette page n'existe pas encore :("
+  en: "The English version of this page doesn't exist yet :("
 langs_avail:
   fr: "Langues :"
   en: "Languages:"
