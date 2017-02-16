@@ -4,7 +4,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ page.title }} | {% include i18n.html value=site.title %}</title>
+  {% if page.title %}
+    <title>{{ page.title }} | {% include i18n.html value=site.title %}</title>
+  {% else %}
+    <title>{% include i18n.html value=site.title %}</title>
+  {% endif %}
   <meta name="description" content="{% include i18n.html value=site.description %}">
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
