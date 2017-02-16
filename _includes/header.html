@@ -25,7 +25,8 @@
     {% endif %}
     </div>
 
-    {% if site.langs %}
+    {% assign nblangs = site.langs | size %}
+    {% if nblangs > 1 %}
       {% include lang_selector.html %}
     {% endif %}
 
