@@ -23,7 +23,7 @@
       {% assign t = i18n_posts | where:"lang",t_lang | first %}
 
       {% if t %}
-      <link rel="alternate" hreflang="{{ t_lang }}" href="{{ t.url }}" />
+      <link rel="alternate" hreflang="{{ t_lang }}" href="{{ site.url }}{{ t.url }}" />
       {% endif %}
     {% endunless %}
   {% endfor %}
