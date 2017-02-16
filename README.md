@@ -63,7 +63,6 @@ Table of contents:
     + Just fill out your usernames for Twitter, Github, LinkedIn, Keybase ; contact email or personal website ; link to your curriculum vitae.
     + Academic automatically loads your Github profile picture.
 + Choose between a **navigation menu** at the top or a **short pitch** for your blog
-+ Set a `dateformat` for the whole website directly from the `_config.yml` file
 + Navigation menu:
     + Hide pages from the navigation menu
     + Add external links in the menu from the `_config.yml` file
@@ -135,8 +134,6 @@ title_html: "<b>hello</b>world"
 `description`: [recommended] short description for search engines. It's displayed in the footer of every page. Not to be confused with `pitch`.
 
 `cc`: [optional] choose among the [Creative Commons](https://creativecommons.org/licenses/) licenses (v4). Accepted values are : `by`, `by-sa`, `by-nd`, `by-nc`, `by-nc-sa`, `by-nc-nd`. Defining the `cc` variable will add a small sentence in the footer. If no value is given, a small copyright is added instead.
-
-`dateformat`: [optional] format the dates of the whole website. Default "%b %-d, %Y". Read [the documentation](https://help.shopify.com/themes/liquid/filters/additional-filters#date) to learn how you can customize the date format.
 
 `nb_posts_page`: [optional] number of posts to display on the homepage. By default, all posts are listed. Note that you should create a page with the archive layout.
 
