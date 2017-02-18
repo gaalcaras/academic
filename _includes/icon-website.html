@@ -1,1 +1,2 @@
-<a target="_blank" href="{{ include.url }}" title="Site"><span class="icon icon--website">{% include icon-website.svg %}</span><span class="username">{{ include.url | replace:'https://','' }}</span></a>
+{% capture url %}{% include i18n.html value=include.url %}{% endcapture %}
+<a target="_blank" href="{{ url }}" title="Site"><span class="icon icon--website">{% include icon-website.svg %}</span><span class="username">{{ url | replace:'https://','' | replace: 'http://','' }}</span></a>

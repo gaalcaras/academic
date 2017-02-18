@@ -12,7 +12,7 @@
         <span class="author">
           {{ i18n.by[plang] }}
           {% if site.author_website %}
-          <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a>
+          <a target="_blank" href="{% include i18n.html value=site.author_website %}">{{ site.author }}</a>
           {% else %}
           {{ site.author }}
           {% endif %}
@@ -58,7 +58,7 @@
       ({% if oldest != newest %}{{ oldest }}-{% endif %}{{ newest }})
       {% if site.author and site.author_display %}
         {{ i18n.legal[plang][0] }}
-        <a target="_blank" href="{{ site.author_website }}">{{ site.author }}</a> 
+        <a target="_blank" href="{% include i18n.html value=site.author_website %}">{{ site.author }}</a> 
       {% endif %}
       {% if site.cc %}
         {{ i18n.legal[plang][1] }}
