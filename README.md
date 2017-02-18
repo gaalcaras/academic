@@ -19,6 +19,7 @@ All features require you to *opt in*, which means that you can either use a very
 
 Table of contents:
 
+
 * [Features](#features)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -35,6 +36,7 @@ Table of contents:
 		* [About layout](#about-layout)
 		* [Archive layout](#archive-layout)
 		* [404 layout](#404-layout)
+		* [Sitemap layout](#sitemap-layout)
 * [Contributing](#contributing)
 * [Release log](#release-log)
 * [License](#license)
@@ -50,7 +52,7 @@ Table of contents:
 + If you'd like a **multilingual** website, Academic has basic **i18n** support (no plugin required):
     + *Supported languages* : English, French
     + Lang selector to change languages automatically added in header and footer
-    + Basic SEO support for multilingual pages
+    + Basic SEO support for multilingual pages (sitemap and `<head>`)
 + Add an **image thumbnail** to illustrate your posts. It's displayed both on the post list and on the post itself.
 + Add a **summary** to your posts. It's used in the posts lists and on the post itself.
 + **MathJax** support (loaded only on posts layouts)
@@ -58,6 +60,7 @@ Table of contents:
 + Add your name and a shortbio at the end of each post
 + Easily add a "call to action" (links to the RSS feed and your Twitter if you gave your username in the `_config.yml` file) at the end of each post and on your homepage
 + If you want to, **add a Creative Commons license** to your website directly from your `_config.yml` file
++ **Sitemap** layout
 + **About page**:
     + Responsive two-columns layout
     + Just fill out your usernames for Twitter, Github, LinkedIn, Keybase ; contact email or personal website ; link to your curriculum vitae.
@@ -296,6 +299,16 @@ layout: pagenotfound
 ```
 
 The content of the page will be used in the 404 page.
+
+#### Sitemap layout
+
+Create a `sitemap.xml` page, set the layout:
+
+```
+layout: sitemap
+```
+
+You now have a sitemap you can feed to the search engines.
 
 ## Contributing
 
