@@ -192,7 +192,8 @@ blockquote {
  * Code formatting
  */
 
-p code {
+p code,
+li code {
   @include size(vsmall);
 }
 
