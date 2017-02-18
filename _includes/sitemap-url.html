@@ -1,0 +1,30 @@
+{% assign p_done = "404" %}
+{% for p in include.objects %}
+  {% unless p.path contains ".xml" %}
+  {% unless p.path contains ".scss" %}
+  {% assign pname = p.path | split:"." | first %}
+  {% assign p_done_arr = p_done | split:"," %}
+  {% unless p_done_arr contains pname %}
+  <url>
+    <loc>{{ site.url }}{{ p.url | url_escape }}</loc>
+    {% assign versions = include.objects | where_exp:"p","p.path contains pname" %}
+    {% for v in versions %}
+    <xhtml:link
+                rel="alternate"
+                hreflang="{{ v.lang }}"
+                href="{{ site.url }}{{ v.url | url_escape }}"
+                />
+    {% endfor %}
+    {% assign p_done = p_done | append:"," | append:pname %}
+    {% if p.layout == "post" %}
+    <lastmod>{{ p.last_modified_at | default:p.date | date_to_xmlschema }}</lastmod>
+    {% endif %}
+    <changefreq>weekly</changefreq>
+    {% if p.layout == "home" %}
+    <priority>1</priority>
+    {% endif %}
+  </url>
+  {% endunless %}
+  {% endunless %}
+  {% endunless %}
+{% endfor %}
