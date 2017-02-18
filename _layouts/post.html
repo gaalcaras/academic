@@ -35,7 +35,7 @@ layout: default
   {% if site.shortbio %}
   <div class="post-author">
     {% if site.github_username %}
-      <a href="{{ site.author_website }}">
+      <a href="{% include i18n.html value=site.author_website %}">
         <img class="user-picture" src="https://github.com/{{ site.github_username }}.png" alt="{{ site.author }}">
       </a>
     {% endif %}
