@@ -192,9 +192,8 @@ blockquote {
  * Code formatting
  */
 
-code {
-  font-size: $small-font-size;
-  padding: 1px 5px;
+p code {
+  @include size(vsmall);
 }
 
 pre {
@@ -204,13 +203,6 @@ pre {
   padding-left: 10px;
   overflow-x: auto;
   @include size(vsmall);
-
-  > code {
-  @include size(vsmall);
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
 
 /**
