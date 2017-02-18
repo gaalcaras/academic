@@ -3,9 +3,9 @@
   <div class="wrapper">
 
     <div class="site-header-float">
-    {% include sitetitle.html class=true %}
+    {% include _i18n/sitetitle.html class=true %}
     {% if site.pitch %}
-      <span class="site-pitch">{% include i18n.html value=site.pitch %}</span>
+      <span class="site-pitch">{% include _i18n/i18n.html value=site.pitch %}</span>
     {% endif %}
 
     {% if site.pitch == null %}
@@ -27,7 +27,7 @@
 
     {% assign nblangs = site.langs | size %}
     {% if nblangs > 1 %}
-      {% include lang_selector.html %}
+      {% include _i18n/lang_selector.html %}
     {% endif %}
 
   </div>

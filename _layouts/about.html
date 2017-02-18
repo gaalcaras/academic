@@ -12,13 +12,13 @@ layout: default
     <ul class="contact-list">
       {% if site.email %}
       <li>
-        {% include icon-email.html username=site.email %}
+        {% include _icons/email.html username=site.email %}
       </li>
       {% endif %}
 
       {% if site.curriculum.url %}
       <li>
-        {% include icon-file.html curriculum=site.curriculum %}
+        {% include _icons/file.html curriculum=site.curriculum %}
       </li>
       {% endif %}
     </ul>
@@ -26,7 +26,7 @@ layout: default
     <ul class="contact-list">
       {% if site.author_website %}
       <li>
-        {% include icon-website.html url=site.author_website %}
+        {% include _icons/website.html url=site.author_website %}
       </li>
       {% endif %}
     </ul>

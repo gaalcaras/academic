@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% if page.title %}
-    <title>{{ page.title }} | {% include i18n.html value=site.title %}</title>
+    <title>{{ page.title }} | {% include _i18n/i18n.html value=site.title %}</title>
   {% else %}
-    <title>{% include i18n.html value=site.title %}</title>
+    <title>{% include _i18n/i18n.html value=site.title %}</title>
   {% endif %}
-  <meta name="description" content="{% include i18n.html value=site.description %}">
+  <meta name="description" content="{% include _i18n/i18n.html value=site.description %}">
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{% include i18n.html value=site.title %}" href="{{ "/feed.xml" | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{% include _i18n/i18n.html value=site.title %}" href="{{ "/feed.xml" | relative_url }}">
 
   {% assign pagename = page.path | split:"." | first %}
 

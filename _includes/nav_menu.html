@@ -4,8 +4,8 @@
 <ul class="nav-list {{ include.class }}">
 {% for link in site.nav_ext_links %}
   {% if link.url and link.name %}
-  <li><a target="_blank" class="page-link" href="{% include i18n.html value=link.url %}">
-      {% include i18n.html value=link.name %}
+  <li><a target="_blank" class="page-link" href="{% include _i18n/i18n.html value=link.url %}">
+      {% include _i18n/i18n.html value=link.name %}
   </a></li>
   {% endif %}
 {% endfor %}

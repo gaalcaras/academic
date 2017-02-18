@@ -6,13 +6,13 @@
 
       <ul class="footer-col footer-col-1">
         <li>
-          {% include sitetitle.html %}
+          {% include _i18n/sitetitle.html %}
 
         {% if site.author_display %}
         <span class="author">
           {{ i18n.by[plang] }}
           {% if site.author_website %}
-          <a target="_blank" href="{% include i18n.html value=site.author_website %}">{{ site.author }}</a>
+          <a target="_blank" href="{% include _i18n/i18n.html value=site.author_website %}">{{ site.author }}</a>
           {% else %}
           {{ site.author }}
           {% endif %}
@@ -21,7 +21,7 @@
         {% endif %}
 
         {% if site.description %}
-        <li>{% include i18n.html value=site.description %}</li>
+        <li>{% include _i18n/i18n.html value=site.description %}</li>
         {% endif %}
 
       </ul>
@@ -39,7 +39,7 @@
 
       {% assign nblangs = site.langs | size %}
       {% if nblangs > 1 %}
-        {% include lang_selector.html %}
+        {% include _i18n/lang_selector.html %}
       {% endif %}
 
       <div class="tech">
@@ -51,14 +51,14 @@
 
       <div class="legal">
       {% if site.cc == null %}©{% endif %}
-      {% include sitetitle.html %}
+      {% include _i18n/sitetitle.html %}
       {% assign oldest_post = site.posts reversed | first %}
       {% assign oldest = oldest_post.date | date: "%Y" %}
       {% assign newest = site.time | date: "%Y" %}
       ({% if oldest != newest %}{{ oldest }}-{% endif %}{{ newest }})
       {% if site.author and site.author_display %}
         {{ i18n.legal[plang][0] }}
-        <a target="_blank" href="{% include i18n.html value=site.author_website %}">{{ site.author }}</a> 
+        <a target="_blank" href="{% include _i18n/i18n.html value=site.author_website %}">{{ site.author }}</a> 
       {% endif %}
       {% if site.cc %}
         {{ i18n.legal[plang][1] }}

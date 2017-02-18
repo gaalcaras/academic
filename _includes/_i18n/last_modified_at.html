@@ -16,7 +16,7 @@
     {% endif %}
 
     {{ site.data.academic_i18n.lastupdated[plang] }}
-    {% include date.html date=object.last_modified_at %}
+    {% include _i18n/date.html date=object.last_modified_at %}
 
     {% if site.repo %}
     </a>

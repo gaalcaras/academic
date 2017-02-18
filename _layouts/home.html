@@ -11,7 +11,7 @@ layout: default
 
 <div class="{{ div_class }}">
   {% unless site.pitch %}
-  <p>{% include i18n.html value=site.description %}</p>
+  <p>{% include _i18n/i18n.html value=site.description %}</p>
   {% endunless %}
 
   {{ content }}
@@ -25,7 +25,7 @@ layout: default
   {% if nb_posts > site.nb_posts_page %}
   <div class="archive">
     {{ site.data.academic_i18n.all_posts[plang][0] }}
-    <a href="{% include link.html path="archive" %}">{{ site.data.academic_i18n.all_posts[plang][1] }}</a>.</div>
+    <a href="{% include _i18n/link.html path="archive" %}">{{ site.data.academic_i18n.all_posts[plang][1] }}</a>.</div>
   {% endif %}
 
 </div>

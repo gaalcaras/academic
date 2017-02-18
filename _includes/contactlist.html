@@ -4,30 +4,30 @@
 </span>
 <ul class="contact-list {{ include.class }}">
   <li>
-    {% include icon-rss.html %}
+    {% include _icons/rss.html %}
   </li>
 
   {% if site.github_username %}
   <li>
-    {% include icon-github.html username=site.github_username %}
+    {% include _icons/github.html username=site.github_username %}
   </li>
   {% endif %}
 
   {% if site.twitter_username %}
   <li>
-    {% include icon-twitter.html username=site.twitter_username %}
+    {% include _icons/twitter.html username=site.twitter_username %}
   </li>
   {% endif %}
 
   {% if site.linkedin_username %}
   <li>
-    {% include icon-linkedin.html username=site.linkedin_username %}
+    {% include _icons/linkedin.html username=site.linkedin_username %}
   </li>
   {% endif %}
 
   {% if site.keybase_username %}
   <li>
-    {% include icon-keybase.html username=site.keybase_username %}
+    {% include _icons/keybase.html username=site.keybase_username %}
   </li>
   {% endif %}
 
