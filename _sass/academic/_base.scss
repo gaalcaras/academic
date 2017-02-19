@@ -75,6 +75,17 @@ h1 + h3, h1 + h4, h2 + h4 {
 //   left: calc(-20vw + 20%);
 //   vertical-align: middle;
 // }
+
+figure {
+  text-align: center;
+
+  figcaption {
+    margin-top: 5px;
+    font-style: italic;
+    @include size(vsmall);
+  }
+}
+
 img {
   vertical-align: middle;
   max-width: 100%;

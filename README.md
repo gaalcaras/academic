@@ -53,15 +53,16 @@ Table of contents:
     + *Supported languages* : English, French
     + Lang selector to change languages automatically added in header and footer
     + Basic SEO support for multilingual pages (sitemap and `<head>`)
-+ Add an **image thumbnail** to illustrate your posts. It's displayed both on the post list and on the post itself.
-+ Add a **summary** to your posts. It's used in the posts lists and on the post itself.
-+ **MathJax** support (loaded only on posts layouts)
-+ **Tables and footnotes** styled by default (with the `redcarpet` markdown engine)
-+ Add your name and a shortbio at the end of each post
-+ Easily add a "call to action" (links to the RSS feed and your Twitter if you gave your username in the `_config.yml` file) at the end of each post and on your homepage
-+ If you want to, **add a Creative Commons license** to your website directly from your `_config.yml` file
-+ **Sitemap** layout
-+ **About page**:
++ Posts layout allows you to:
+    + Add an **image thumbnail** and a **summary**
+    + Use mathematical notations with **MathJax** (loaded only on posts)
+    + **Tables and footnotes** styled by default (with the `redcarpet` markdown engine)
+    + Add your name and a shortbio at the end of each post
++ Easily add a "call to action" (RSS feed, Twitter, etc.) at the end of each post and on your homepage
++ **Add a Creative Commons license** to your website directly from your `_config.yml` file
++ **Sitemap** and **404 page** layout
++ Piwik tracking
++ **About page** layout:
     + Responsive two-columns layout
     + Just fill out your usernames for Twitter, Github, LinkedIn, Keybase ; contact email or personal website ; link to your curriculum vitae.
     + Academic automatically loads your Github profile picture.
@@ -69,8 +70,6 @@ Table of contents:
 + Navigation menu:
     + Hide pages from the navigation menu
     + Add external links in the menu from the `_config.yml` file
-+ 404 page layout
-+ Piwik tracking
 
 ## Installation
 
@@ -309,6 +308,19 @@ layout: sitemap
 ```
 
 You now have a sitemap you can feed to the search engines.
+
+### Includes
+
+Sometimes you need to use figures and images in your posts, with detailed captions and maybe even the source of the image.
+The `image.html` allows you to do just that without all the HTML markup.
+
+```
+{% include image.html src="/assets/img/zotero-archives-numeriques/screencast.gif"
+                      caption="Notre solution en action" 
+                      desc="Screencast de capture Zotero"
+                      source="Google"
+                      href="http://google.com"%}
+```
 
 ## Contributing
 
