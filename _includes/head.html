@@ -41,13 +41,13 @@
   {% endif %}
 
   {% if file.path contains "safari-pinned-tab.svg" %}
-  <link rel="mask-icon" href="{{ file.path }}" color="#{{ site.favicon_color | default:"ffffff" }}">
+  <link rel="mask-icon" href="{{ file.path }}" color="#{{ site.favicon.safari | default:"ffffff" }}">
   {% endif %}
 
   {% endfor %}
   {% endcapture %}
   {{ favicons | strip_newlines | lstrip }}
-  <meta name="theme-color" content="#{{ site.theme_color | default:"ffffff" }}">
+  <meta name="theme-color" content="#{{ site.favicon.theme | default:"ffffff" }}">
 
   {% assign pagename = page.path | split:"." | first %}
 
