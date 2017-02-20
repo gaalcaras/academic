@@ -1,3 +1,4 @@
+{% capture text %}
 {% assign plang = page.lang | default: site.langs[0] | default: "en" %}
 {% assign val = include.value %}
 
@@ -12,3 +13,5 @@
 {% else %}
   {{ v | strip_newlines }}
 {% endif %}
+{% endcapture %}
+{{ text | strip_newlines }}
