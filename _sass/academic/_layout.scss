@@ -220,6 +220,23 @@
         border-bottom: 5px $grey-color solid;
       }
 
+      @include media-query($on-palm) {
+        height: auto;
+        line-height: normal;
+
+        &:nth-child(n+0) {
+          margin: 0;
+          height: auto;
+          padding: 0 10px 0px;
+        }
+
+        a {
+          margin: 0px;
+          padding: 0px;
+        }
+
+      }
+
     }
   }
 
@@ -231,6 +248,7 @@
     border: 1px solid $grey-color-light;
     border-radius: 5px;
     text-align: right;
+    margin-left: 20px;
 
     .menu-icon {
       display: block;
