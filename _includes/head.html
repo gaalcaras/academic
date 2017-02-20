@@ -22,6 +22,33 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{% include _i18n/i18n.html value=site.title %}" href="{{ "/feed.xml" | relative_url }}">
 
+  {% capture favicons %}
+  {% for file in site.static_files %}
+  {% if file.path contains "apple-touch-icon.png" %}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ file.path }}">
+  {% endif %}
+
+  {% if file.path contains "favicon-16x16.png" %}
+  <link rel="icon" type="image/png" href="{{ file.path }}" sizes="16x16">
+  {% endif %}
+
+  {% if file.path contains "favicon-32x32.png" %}
+  <link rel="icon" type="image/png" href="{{ file.path }}" sizes="32x32">
+  {% endif %}
+
+  {% if file.path contains "manifest.json" %}
+  <link rel="manifest" href="{{ file.path }}">
+  {% endif %}
+
+  {% if file.path contains "safari-pinned-tab.svg" %}
+  <link rel="mask-icon" href="{{ file.path }}" color="#{{ site.favicon_color | default:"ffffff" }}">
+  {% endif %}
+
+  {% endfor %}
+  {% endcapture %}
+  {{ favicons | strip_newlines | lstrip }}
+  <meta name="theme-color" content="#{{ site.theme_color | default:"ffffff" }}">
+
   {% assign pagename = page.path | split:"." | first %}
 
   {% if page.layout == "post" %}
