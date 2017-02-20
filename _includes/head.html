@@ -7,7 +7,7 @@
   {% if page.seo.title %}
   <title>{{ page.seo.title }}</title>
   {% else %}
-  <title>{{ page.title | append: "|" | default:"" }}{% include _i18n/i18n.html value=site.title %}</title>
+  <title>{{ page.title | append: " | " | default:"" }}{% include _i18n/i18n.html value=site.title %}</title>
   {% endif %}
 
   {% if page.seo.description %}
