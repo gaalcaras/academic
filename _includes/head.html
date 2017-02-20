@@ -4,12 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% if page.title %}
-    <title>{{ page.title }} | {% include _i18n/i18n.html value=site.title %}</title>
+  {% if page.seo.title %}
+  <title>{{ page.seo.title }}</title>
   {% else %}
-    <title>{% include _i18n/i18n.html value=site.title %}</title>
+  <title>{{ page.title | append: "|" | default:"" }}{% include _i18n/i18n.html value=site.title %}</title>
   {% endif %}
+
+  {% if page.seo.description %}
+  <meta name="description" content="{{ page.seo.description | truncate: 160 }}">
+  {% elsif page.summary %}
+  <meta name="description" content="{{ page.summary | truncate: 160 }}">
+  {% else %}
   <meta name="description" content="{% include _i18n/i18n.html value=site.description %}">
+  {% endif %}
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
