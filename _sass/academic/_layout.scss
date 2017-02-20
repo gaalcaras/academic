@@ -718,13 +718,14 @@
 
 .user-picture {
   border-radius: 50%;
+  max-width: calc(85%);
 }
 
 .about-col-1 {
   @include size(vsmall);
   padding-right: $spacing-unit / 2;
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(35% - (#{$spacing-unit} / 4));
+  width:         calc(35% - (#{$spacing-unit} / 4));
 
 
   .user-picture {
@@ -735,8 +736,8 @@
 
 .about-col-2 {
   @include size(small);
-  width: -webkit-calc(65% - (#{$spacing-unit} / 2));
-  width:         calc(65% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(65% - (#{$spacing-unit} / 4));
+  width:         calc(65% - (#{$spacing-unit} / 4));
 }
 
 @include media-query($on-laptop) {
