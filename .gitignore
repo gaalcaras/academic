@@ -1,6 +1,7 @@
 *.gem
 *.sh
 assets/img
+assets/favicons
 .bundle
 .sass-cache
 _site
