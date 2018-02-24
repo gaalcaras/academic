@@ -14,7 +14,7 @@
     {{ site.data.academic_i18n.langs_avail[plang] }}
   </span>
   <li class="lang">
-    <a href="{{ page.url }}" title="{{ versions[plang] }} {{ page.title }}">
+    <a href="{{ page.url |relative_url}}" title="{{ versions[plang] }} {{ page.title }}">
       {{ plang }}
     </a>
   </li>
@@ -24,7 +24,7 @@
     {% assign t = i18n_posts | where:"lang",t_lang | first %}
     <li class="lang">
     {% if t %}
-      <a href="{{ t.url }}" rel="alternate" title="{{ versions[t_lang] }} {{ t.title }}">
+      <a href="{{ t.url | relative_url }}" rel="alternate" title="{{ versions[t_lang] }} {{ t.title }}">
     {% else %}
       <span class="no-version" title="{{ no_versions[t_lang] }}">
     {% endif %}
