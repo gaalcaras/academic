@@ -11,9 +11,9 @@
 {% endfor %}
 
 {% if nblangs > 1 %}
-  {% assign pages = site.pages | where:"lang",plang %}
+  {% assign pages = site.pages | (where:"lang",plang and sort: 'weight') %}
 {% else %}
-  {% assign pages = site.pages %}
+  {% assign pages = site.pages | sort: 'weight' %}
 {% endif %}
 
 {% for my_page in pages %}
