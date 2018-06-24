@@ -1,0 +1,11 @@
+docs_list_title: ACME Documentation
+docs:
+
+- title: CV
+  url: CV.html
+
+- title: publication
+  url: publication.html
+
+- title: Research Project
+  url: Research Project.html
