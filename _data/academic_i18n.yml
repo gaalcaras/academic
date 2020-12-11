@@ -40,7 +40,7 @@ by:
   en: "by"
 legal:
   fr: ["par", "est placé sous licence"]
-  fr: ["oleh", "tersedia dibawah lisensi"]  
+  id: ["oleh", "tersedia dibawah lisensi"]  
   en: ["by", "is available under the license"]
 feed:
   fr: "flux RSS"
