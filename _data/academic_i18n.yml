@@ -1,11 +1,14 @@
 months:
   fr: ["janvier", "février", "mars", "avril", "mai", "juin",
        "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+  id: ["januari", "februari", "maret", "april", "mei", "juni", "juli", "agustus", "september", "oktober", "november", "desember"]
 dateformat:
   fr: "%e %B %Y"
+  id: "%b %-d, %Y"
   en: "%b %-d, %Y"
 lastupdated:
   fr: "mis à jour le"
+  id: "terakhir diperbarui"
   en: "last updated on"
 revhistory:
   fr: "Voir l'historique des révisions de ce billet"
@@ -13,49 +16,65 @@ revhistory:
 cta:
   like:
     fr: "Le blog vous intéresse ?"
+    id: "Apakah kamu menyukai blog ini?"
     en: "Do you enjoy the blog?"
   post:
     fr: "Le post vous a plu ?"
+    id: "Apakah kamu menyukai post ini?"
     en: "Did you like that post?"
   rss:
     fr: ["Vous pouvez vous abonner au", "fil RSS", "du blog"]
+    id: ["Kamu bisa subscribe ke", "RSS feed", ""]
     en: ["You can suscribe to the", "RSS feed", ""]
   twitter:
     fr: ["ou suivre", "sur Twitter"]
+    id: ["atau follow", "di Twitter"]
     en: ["or follow", "on Twitter"]
 links:
   fr: "Liens :"
+  id: "Tautan :"
   en: "Links :"
 by:
   fr: "par"
+  id: "oleh"
   en: "by"
 legal:
   fr: ["par", "est placé sous licence"]
+  id: ["oleh", "tersedia dibawah lisensi"]  
   en: ["by", "is available under the license"]
 feed:
   fr: "flux RSS"
+  id: "RSS feed"
   en: "RSS feed"
 menu:
   fr: "Menu :"
+  id: "Menu:"
   en: "Menu:"
 archive:
   fr: "Bienvenue dans les archives de ce blog. Vous trouverez ci-dessous la liste complète des billets publiés, ordonnés du plus récent au plus ancien."
+  id: "Selamat datang di arkiv blog. Dibawh ini kamu bisa melihat semua pos dalam urutan kronologis terbalik."
   en: "Welcome to the archives of this blog. Below, you will find all published posts listed in reverse chronological order."
 all_posts:
   fr: ["Voir", "tous les articles publiés"]
+  id: ["Lihat", "semua pos terpublikasi"]
   en: ["See", "all published posts"]
 notfound:
   fr: "Cette page a probablement déménagé vers une nouvelle adresse..."
+  id: "Sepertinya laman ini sudah pindah..."
   en: "I guess this page has moved somewhere else..."
 versions:
   fr: "Version française :"
+  id: "Versi Bahasa Indonesia:"
   en: "English version:"
 no_versions:
   fr: "La version française de cette page n'existe pas encore :("
+  id: "Versi Bahasa Indonesia laman ini belum ada :("
   en: "The English version of this page doesn't exist yet :("
 langs_avail:
   fr: "Langues :"
+  id: "Bahasa :"
   en: "Languages:"
 cv:
   fr: "Curriculum Vitae"
+  id: "CV"
   en: "Curriculum"
